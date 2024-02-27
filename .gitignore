@@ -5,3 +5,4 @@ static/pics/*
 .env
 Files
 liara.json
+.vscode
