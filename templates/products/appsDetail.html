@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% load i18n %}
+{% block mainBodyContent %}
+<h3>
+
+    {%if user.is_authenticated%}
+    {% if appIsPurchased %}
+    <a href="{%url 'download' prod='app' id=app_i.id%}">
+        <button class="downloadButt">
+            {% trans 'Download'%}
+        </button>
+    </a>
+    {%else%}
+    <button class="add2cart" onclick="addRemove(event)" data-action="add" data-id="{{ app_i.id }}" data-type="app">
+        {% trans 'Add to cart'%}
+    </button>
+    <button class="removeFromCart" onclick="addRemove(event)" data-action="remove" data-id="{{ app_i.id }}"
+        data-type="app">
+        {% trans 'Remove from cart'%}
+    </button>
+    {%endif%}
+    {% else %}
+
+    <a href="{%url 'login'%}" style="text-decoration-line:none; color:rgb(255, 0, 111);"> {%trans 'To download this you need to Login'%} </a>
+    {%endif%}
+</h3>
+{%if user.is_authenticated%}
+<div class="prodPrice">
+    <h3>{%trans 'price'%}: {{app_i.price}} {%trans 'tomans'%}</h3>
+ </div>
+ {%endif%}
+<div class="prodDetailDiv">
+    <div class="prodDemo">
+        <div id="55840133971">
+            <iframe src="{{app_i.demo}}" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true">
+            </iframe>
+        </div>
+    </div>
+    <div class="prodDesription">
+        <h3>{{app_i.description}}</h3>
+    </div>
+</div>
+{% endblock %}

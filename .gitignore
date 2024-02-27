@@ -1,0 +1,7 @@
+# media/images/*
+db.sqlite3
+geoip
+static/pics/*
+.env
+Files
+liara.json

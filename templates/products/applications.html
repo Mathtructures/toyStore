@@ -1,0 +1,29 @@
+{% load i18n %}
+{% for app in AllApplications %}
+<div class="apps">
+    {%if user.is_authenticated%}
+    {% if app.id in purchasedApps %}
+    <a href="{%url 'download' prod='app' id=app.id%}">
+        <button class="downloadButt">
+            {% trans 'Download'%}
+        </button>
+    </a><br>
+    {%else%}
+    <button class="add2cart" onclick="addRemove(event)" data-action="add" data-id="{{ app.id }}" data-type="app">
+        {% trans 'Add to cart'%}
+    </button>
+    <button class="removeFromCart" onclick="addRemove(event)" data-action="remove" data-id="{{ app.id }}"
+        data-type="app">
+        {% trans 'Remove from cart'%}
+    </button><br>
+    {% endif %}
+    {% endif %}
+    {%trans 'title'%}: {{app.name}}<br>
+    {%if user.is_authenticated%}
+    {%trans 'price'%}: {{app.price}} {%trans 'tomans'%}<br>
+    {%endif%}
+    <a href="{%url 'app_i' app.id%}">
+        <img style="max-width:300px;" src="/media/{{app.cover}}" alt="NO COVER" />
+    </a>
+</div>
+{% endfor %}

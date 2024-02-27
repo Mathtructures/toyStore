@@ -1,0 +1,101 @@
+{%extends 'layout.html'%}
+{% load i18n %}
+
+
+{% block mainBodyContent %}
+{%if message%}
+<h2 style="color:red;">{{message}}</h2>
+{%endif%}
+<form action="{% url 'signup' %}" method="post" lang="{{request.LANGUAGE_CODE}}">
+    {% csrf_token %}
+    <input class="myInput" type="text" name="first_Name" placeholder="{% trans 'Your first name' %}:" required><br>
+    <input class="myInput" type="text" name="last_Name" placeholder="{% trans 'Your last name' %}:" required><br>
+    <input class="myInput" id="username" onchange="isUserValid()" type="text" name="user_Name"
+        placeholder="{% trans 'Select your username' %}:" required>
+    <h6 style="margin:0px;" id="messageUsername"></h6>
+    <input class="myInput" id="pass1" onchange="isPasswordValid()" type="password" name="passw1"
+        placeholder="{% trans 'Select your password' %}:" required><br>
+    <input class="myInput" id="pass2" onchange="isPasswordValid()" type="password" name="passw2"
+        placeholder="{% trans 'Re-type the password' %}:" required>
+    <h6 style="margin:0px;" id="messagePass"></h6>
+    <input class="myInput" id="email" onchange="isEmailValid()" type="email" name="e_mail"
+        placeholder="{% trans 'Your email address' %}:" required>
+    <h6 style="margin:0px;" id="messageEmail"></h6>
+    <input class="myInput" type="number" name="cell_phone" placeholder="{% trans 'Your phone(Optional)' %}:"><br>
+    <input class="myInput" type="text" name="quote" placeholder="
+{% trans 'Give us a quote(Optional)' %}:"><br>
+    <input id="signUpButton" class="loginSignupButton" type="submit" value="   {% trans 'Sign up' %}   "><br>
+    <script>
+        var submit = document.getElementById("signUpButton")
+        submit.hidden = true
+        var state = {}
+        var usernameIsValid = false
+        var passwordIsValid = false
+        var emailIsValid = false
+
+        function isUserValid() {
+            msgDiv = document.getElementById('messageUsername')
+            var username = document.getElementById("username").value;
+            if (username.includes("#")) {
+                username = username.replace("#", "@")
+            }
+            const baseUrl = document.location.protocol + '//' + document.location.host + '/'
+            fetch(`${baseUrl}isuservalid?username=${username}`)
+                .then(response => response.json())
+                .then(data => {
+                    usernameIsValid = data.result;
+                    render_all_messages(data, msgDiv)
+                })
+                .catch(er => { console.log(er) });
+
+        }
+
+        function isPasswordValid() {
+            msgDiv = document.getElementById('messagePass')
+            passwordIsValid = false
+            var pass1 = document.getElementById("pass1")
+            var pass2 = document.getElementById("pass2")
+            if (pass1.value === pass2.value && pass2.value.length > 7) {
+                passwordIsValid = true
+                state = {
+                    'result': true,
+                    'message': '',
+                    'messageColor': 'blue'
+                }
+            } else {
+                state = {
+                    'result': false,
+                    'message': 'Passwords should be identical and at least "8" characters!',
+                    'messageColor': 'red'
+                }
+            }
+            render_all_messages(state, msgDiv)
+        }
+
+        function isEmailValid() {
+            msgDiv = document.getElementById('messageEmail')
+            var email = document.getElementById("email").value;
+            const baseUrl = document.location.protocol + '//' + document.location.host + '/'
+            state = fetch(`${baseUrl}isemailvalid?email=${email}`)
+                .then(response => response.json())
+                .then(data => {
+                    emailIsValid = data.result;
+                    render_all_messages(data, msgDiv)
+                })
+                .catch(er => { console.log(er) });
+
+        }
+
+        function render_all_messages(state, element) {
+            element.innerHTML = state.message
+            element.style.color = state.messageColor
+            if (usernameIsValid && passwordIsValid && emailIsValid) {
+                submit.hidden = false
+            } else {
+                submit.hidden = true
+            }
+        }
+    </script>
+</form>
+
+{% endblock %}

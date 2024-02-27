@@ -1,0 +1,400 @@
+@keyframes elemAnimation {
+    0% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes coolBack {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    30% {
+        background-position: 100% 0%;
+    }
+
+    60% {
+
+        background-position: 0% 100%
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+body.other {
+    padding: 0;
+    background: linear-gradient(90deg, rgb(255, 255, 255),
+            rgb(255, 164, 237),
+            rgb(255, 255, 255),
+            rgb(153, 212, 255));
+    background-size: 800% 800%;
+    animation-name: coolBack;
+    animation-duration: 300s;
+    transition-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+body.Homepage {
+    padding: 0;
+    background: linear-gradient(90deg, #140E72, #2D2781);
+}
+
+
+
+#landingHead {
+    position: relative;
+    width: 100%;
+
+}
+
+#hiddenLandingIMG {
+    @media (min-width: 700px) {
+        margin-top: -100px;
+    }
+
+    @media (max-width: 700px) {
+        margin-top: 50px;
+    }
+
+    width: 100%;
+}
+
+footer {
+    opacity: 0;
+    transition-duration: 1s;
+    margin-top: 500px;
+    min-height: 400px;
+    width: 100%;
+    background: linear-gradient(45deg, rgb(0, 4, 255), rgba(17, 255, 0, 0.495), rgba(255, 0, 0, 0.495), rgb(0, 4, 255));
+}
+
+footer:hover {
+    opacity: 0.8;
+    transition-duration: 1s;
+}
+
+#mainBodyContent {
+    padding: 20px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    transition-duration: 1s;
+}
+
+#mainBodyContent:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    transition-duration: 1s;
+}
+
+.navbar {
+    background: linear-gradient(rgb(149, 149, 255),rgb(137, 137, 255), rgba(0, 0, 255, 0.5));
+    backdrop-filter: blur(5px);
+    font-size: 20px;
+}
+
+.navbar-brand,
+.navbar-toggler {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.nav-item {
+    width: fit-content;
+    padding-left: 20px;
+}
+
+
+.nav-link {
+    text-decoration: none;
+    transition: 0.2s;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+.nav-link:hover {
+    transition-duration: 0.2s;
+    background-color: rgba(255, 0, 0, 0.295);
+
+    border-radius: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+}
+
+.dropdown-content a {
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+    color: rgb(0, 0, 0);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 57, 2, 0.945);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 99;
+}
+
+#navbarProfile {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+form {
+    text-align: center;
+}
+
+@media screen and (min-width: 480px) {
+    form {
+        width: auto;
+        text-align: center;
+        max-width: 600px;
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    form {
+        width: 100%;
+
+    }
+}
+
+.myInput {
+    margin: 0;
+    margin-top: 5px;
+    left: auto;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    opacity: 0.8;
+    border-style: none;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(90deg, rgba(0, 150, 255), rgba(0, 255, 150));
+}
+
+.myInput:hover,
+.myInput:focus {
+    background: linear-gradient(45deg, rgba(0, 255, 150), rgba(0, 150, 255));
+}
+
+
+::placeholder {
+    color: rgb(0, 4, 255);
+}
+
+.loginSignupButton {
+    position: relative;
+    left: -70px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: auto;
+    background-color: rgb(72, 63, 142);
+    border-style: none;
+}
+
+.getDataButton {
+    position: relative;
+    margin: 50px;
+    width: auto;
+    background-color: rgb(150, 255, 160);
+    border-style: none;
+}
+
+.getDataButton:hover {
+    margin: 50px;
+    width: auto;
+    background-color: rgb(151, 236, 255);
+    border-style: none;
+}
+
+.getDataButton:focus {
+    margin: 50px;
+    width: auto;
+    background-color: rgb(151, 236, 255);
+    border-style: solid 3px #000;
+}
+
+.apps,
+.progCodes {
+    padding: 10px;
+    width: auto;
+    /* height: fit-content; */
+    color: rgb(196, 251, 255);
+    font-size: 20px;
+    max-width: min(500px, 90%);
+    animation-name: elemAnimation;
+    animation-duration: 2s;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    flex-basis: auto;
+    border-radius: 10px;
+    border: solid 3px rgba(0, 0, 0, 0.3);
+    transition-duration: 0.2s;
+}
+
+.apps:hover,
+.progCodes:hover {
+    transform: scale(1.05);
+    transition-duration: 0.2s;
+    background-color: rgba(9, 99, 22, 0.667);
+}
+
+#prodsDiv,
+#userLibrary {
+    text-align: center;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    animation-name: elemAnimation;
+    animation-duration: 1s;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition-duration: 1s;
+    backdrop-filter: blur(3px);
+    max-width: 100%;
+    width: 100%;
+}
+
+#prodsDiv img,
+#userLibrary img {
+    text-align: center;
+    margin-top: 10px;
+    min-width: none;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#prodsDiv:hover {
+
+    background-color: rgba(0, 0, 0, 0.2);
+    transition-duration: 1s;
+}
+
+.prodDetailDiv {
+    padding: 30px;
+    /* position: relative; */
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition-duration: 1s;
+    backdrop-filter: blur(3px);
+
+}
+
+.prodDetailDiv:hover {
+
+    background-color: rgba(0, 0, 0, 0.2);
+    transition-duration: 1s;
+}
+
+.prodDemo {
+    width: 100%;
+    flex-grow: 3;
+    align-items: center;
+    width: auto;
+}
+
+.add2cart {
+    background-color: rgb(101, 251, 101);
+    color: black;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.add2cart:hover {
+    background-color: rgb(183, 255, 183);
+    color: black;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.add2cart:focus {
+    background-color: rgb(0, 255, 0);
+    color: black;
+    margin: 10px;
+}
+
+.removeFromCart {
+    background-color: rgb(251, 101, 101);
+    color: black;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.removeFromCart:hover {
+    background-color: rgb(255, 183, 183);
+    color: black;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.removeFromCart:focus {
+    background-color: rgb(255, 0, 0);
+    color: black;
+    margin: 10px;
+}
+
+.downloadButt {
+    background-color: rgb(101, 106, 251);
+    border-radius: 5px;
+    color: rgb(238, 255, 0);
+    margin: 10px;
+}
+
+.downloadButt:hover {
+    background-color: rgb(156, 147, 255);
+    color: rgb(97, 97, 0);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.downloadButt:focus {
+    background-color: rgb(38, 0, 255);
+    color: rgb(235, 255, 104);
+    margin: 10px;
+}
+
+iframe {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    max-height: 500px;
+    max-width: 500px;
+}
+
+.article:lang('en-us') {
+    font-family: 'Josefin Sans', 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+.article[lang="fa"] {
+    font-family: Sahel, sans-serif;
+}
+
+[lang="en-us"] {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+
+[lang="fa"] {
+    font-family: Sahel, sans-serif;
+}

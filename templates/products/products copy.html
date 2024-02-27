@@ -1,0 +1,51 @@
+{%extends 'layout.html'%}
+
+{% block mainBodyContent %}
+
+<div id="getProdsButtons"></div>
+<div id="prods"></div>
+<script type="text/babel">
+    function ShowProdsClick() {
+        return (
+            <div>
+                <button class="getDataButton" onClick={() => myFetch('apps')}>
+                    Applications
+                </button>
+                <button class="getDataButton" onClick={() => myFetch('progs')}>
+                    Programme Codes
+                </button>
+            </div>
+        );
+    }
+    ReactDOM.render(<ShowProdsClick />, document.getElementById('getProdsButtons'))
+    const baseUrl = document.location.protocol + '//' + document.location.host + '/'
+    function myFetch(prodName) {
+        fetch(`${baseUrl}api/${prodName}`)
+            .then(res => res.json())
+            .then(data => proccess(data, prodName))
+            .catch(error => console.log(error))
+    }
+    const proccess = (data, prodName) => {
+        const apps = JSON.parse(data.allApps)
+        document.getElementById('prods').innerHTML = ""
+
+        apps.forEach(function (app) {
+            let elem = document.createElement('div')
+            elem.className = `${prodName}Elem`
+            let imageUrl = baseUrl + "media/" + app.fields.cover
+            ReactDOM.render(<AppElems app={app} imgUrl={imageUrl} />, elem)
+            document.getElementById('prods').append(elem)
+            function AppElems(props) {
+                return (
+                    <div>
+                        <h1>{props.app.fields.name}</h1>
+                        <p>{props.app.fields.description}</p>
+                        <h3>{props.app.fields.price}</h3>
+                        <img src={props.imgUrl} alt="NO COVER" />
+                    </div>
+                )
+            }
+        })
+    }
+</script>
+{%endblock%}

@@ -1,0 +1,271 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-15 21:13+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\base\views.py:24
+msgid "Homepage"
+msgstr "صفحه اصلی"
+
+#: .\members\models.py:132
+msgid "Numera account activation"
+msgstr "فعالسازی حساب کاربری سایت"
+
+#: .\members\views.py:35 .\members\views.py:36 .\templates\navbar.html:31
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: .\members\views.py:63
+msgid "Item is added to your cart"
+msgstr "این مورد به سبد خرید شما اضافه شد"
+
+#: .\members\views.py:75
+msgid "This item has already been added to your cart."
+msgstr "این مورد قبلا به سبد خرید شما افزوده شده است!"
+
+#: .\members\views.py:78
+msgid "Item is removed from your cart"
+msgstr "این مورد از سبد خرید شما حذف شد"
+
+#: .\members\views.py:89
+msgid "This item doesn't exist in your cart."
+msgstr "این مورد در سبد خرید شما موجود نیست"
+
+#: .\members\views.py:92
+msgid "Sorry! but are not authenticated!"
+msgstr "پوزش! شما احراز هویت نشده‌اید!"
+
+#: .\members\views.py:104 .\members\views.py:105
+msgid "Profile"
+msgstr "پنل کاربری"
+
+#: .\members\views.py:129 .\members\views.py:131 .\members\views.py:133
+#: .\members\views.py:135 .\members\views.py:137 .\members\views.py:139
+#: .\members\views.py:141 .\members\views.py:142
+#: .\templates\members\login.html:11 .\templates\navbar.html:38
+msgid "Login"
+msgstr "ورود به حساب کاربری"
+
+#: .\members\views.py:130
+msgid "Invalid password"
+msgstr "رمز عبور نامعتبر"
+
+#: .\members\views.py:134
+msgid "Your account is not active!"
+msgstr "حساب کاربری شما فعال نیست"
+
+#: .\members\views.py:138
+msgid "Invalid username"
+msgstr "نام کاربری نامعتبر"
+
+#: .\members\views.py:178 .\members\views.py:185
+#: .\templates\members\signup.html:27 .\templates\navbar.html:41
+msgid "Sign up"
+msgstr "ایجاد حساب کاربری"
+
+#: .\members\views.py:179 .\members\views.py:186
+msgid "Registration"
+msgstr "ثبت‌نام"
+
+#: .\members\views.py:180
+msgid "Verification email was not sent successfully!"
+msgstr "ایمیل تائید ارسال نشد!"
+
+#: .\members\views.py:202
+msgid "Username should contain only numbers or english characters!"
+msgstr "نام کاربری تنها باید شامل _، اعداد و حروف انگلیسی باشد!"
+
+#: .\members\views.py:210
+msgid "This username is already used!"
+msgstr "این نام کاربری قبلا استفاده شده است!"
+
+#: .\members\views.py:232
+msgid "This email is already used!"
+msgstr "این ایمیل قبلا استفاده شده است!"
+
+#: .\members\views.py:263 .\members\views.py:268
+msgid "Activation"
+msgstr "فعالسازی"
+
+#: .\numera\settings.py:149
+msgid "Farsi"
+msgstr "فارسی"
+
+#: .\numera\settings.py:150
+msgid "English"
+msgstr "انگلیسی"
+
+#: .\products\views.py:13 .\products\views.py:14 .\products\views.py:23
+#: .\products\views.py:38 .\products\views.py:59 .\products\views.py:74
+#: .\templates\navbar.html:18
+msgid "Products"
+msgstr "محصولات"
+
+#: .\products\views.py:21 .\templates\navbar.html:21
+msgid "Applications"
+msgstr "برنامه‌ها"
+
+#: .\products\views.py:36
+msgid "Programme codes"
+msgstr "کدهای برنامه‌نویسی"
+
+#: .\products\views.py:58
+msgid "Code"
+msgstr "کد"
+
+#: .\products\views.py:73
+msgid "App"
+msgstr "اپ"
+
+#: .\templates\members\confirmationMail.html:12
+msgid "please activate your user account"
+msgstr "لطفا حساب کاربری خود را فعال کنید"
+
+#: .\templates\members\confirmationMail.html:16
+msgid "Verify this email"
+msgstr "تائید این ایمیل"
+
+#: .\templates\members\login.html:9
+msgid "Enter your username"
+msgstr "نام کاربری خود را وارد کنید"
+
+#: .\templates\members\login.html:10
+msgid "Enter your password"
+msgstr "رمز عبور خود را وارد کنید"
+
+#: .\templates\members\profile.html:6
+msgid "Welcome dear"
+msgstr "خوش آمدی"
+
+#: .\templates\members\profile.html:9
+msgid "Your library"
+msgstr "کتابخانه شما"
+
+#: .\templates\members\profile.html:13 .\templates\members\profile.html:22
+#: .\templates\members\userCart.html:10 .\templates\members\userCart.html:26
+#: .\templates\products\applications.html:21
+#: .\templates\products\progCodes.html:22
+msgid "title"
+msgstr "عنوان"
+
+#: .\templates\members\signup.html:11
+msgid "Your first name"
+msgstr "نام شما"
+
+#: .\templates\members\signup.html:12
+msgid "Your last name"
+msgstr "نام خانوادگی شما"
+
+#: .\templates\members\signup.html:14
+msgid "Select your username"
+msgstr "نام کاربری خود را انتخاب کنید"
+
+#: .\templates\members\signup.html:17
+msgid "Select your password"
+msgstr "رمز عبور خود را انتخاب کنید"
+
+#: .\templates\members\signup.html:19
+msgid "Re-type the password"
+msgstr "رمز انتخابی را تکرار کنید"
+
+#: .\templates\members\signup.html:22
+msgid "Your email address"
+msgstr "آدرس ایمیل شما"
+
+#: .\templates\members\signup.html:24
+msgid "Your phone(Optional)"
+msgstr "شماره تلفن شما(اختیاری)"
+
+#: .\templates\members\signup.html:26
+msgid "Give us a quote(Optional)"
+msgstr "یک نقل قول دلخواه شما(اختیاری)"
+
+#: .\templates\members\userCart.html:11 .\templates\members\userCart.html:27
+#: .\templates\products\applications.html:23
+#: .\templates\products\appsDetail.html:29
+#: .\templates\products\progCodes.html:24
+#: .\templates\products\progCodesDetail.html:30
+msgid "price"
+msgstr "قیمت"
+
+#: .\templates\members\userCart.html:11 .\templates\members\userCart.html:27
+#: .\templates\members\userCart.html:39
+#: .\templates\products\applications.html:23
+#: .\templates\products\appsDetail.html:29
+#: .\templates\products\progCodes.html:24
+#: .\templates\products\progCodesDetail.html:30
+msgid "tomans"
+msgstr "تومان"
+
+#: .\templates\members\userCart.html:16 .\templates\members\userCart.html:33
+#: .\templates\products\applications.html:17
+#: .\templates\products\appsDetail.html:19
+#: .\templates\products\progCodes.html:17
+#: .\templates\products\progCodesDetail.html:20
+msgid "Remove from cart"
+msgstr "حذف از سبد خرید"
+
+#: .\templates\members\userCart.html:39
+msgid "Total price"
+msgstr "قیمت کل"
+
+#: .\templates\members\userCart.html:45
+msgid "Buy with IRR"
+msgstr "خرید با ریال ایران"
+
+#: .\templates\members\userCart.html:51
+msgid "Buy with BTC"
+msgstr "خرید با بیتکوین"
+
+#: .\templates\members\userCart.html:56
+msgid "There are no items in your cart."
+msgstr "هیچ آیتمی در سبد خرید شما موجود نیست."
+
+#: .\templates\navbar.html:14
+msgid "Home"
+msgstr "خانه"
+
+#: .\templates\navbar.html:22
+msgid "Programme Codes"
+msgstr "کدهای برنامه‌نویسی"
+
+#: .\templates\navbar.html:34
+msgid "Logout"
+msgstr "خروج از حساب کاربری"
+
+#: .\templates\products\applications.html:8
+#: .\templates\products\appsDetail.html:10
+#: .\templates\products\progCodes.html:8
+#: .\templates\products\progCodesDetail.html:10
+msgid "Download"
+msgstr "دانلود"
+
+#: .\templates\products\applications.html:13
+#: .\templates\products\appsDetail.html:15
+#: .\templates\products\progCodes.html:13
+#: .\templates\products\progCodesDetail.html:16
+msgid "Add to cart"
+msgstr "اضافه به سبد خرید"
+
+#: .\templates\products\appsDetail.html:24
+#: .\templates\products\products.html:7
+#: .\templates\products\progCodesDetail.html:25
+msgid "To download this you need to Login"
+msgstr "برای دانلود باید وارد حساب کاربری شوید"
+
+#~ msgid "Buy"
+#~ msgstr "خرید"

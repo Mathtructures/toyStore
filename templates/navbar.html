@@ -1,0 +1,63 @@
+{% load i18n %}
+{%load static%}
+<nav class="navbar navbar-light navbar-expand-lg  fixed-top">
+    <a class="navbar-brand" href="{%url 'homepage'%}">
+        <img style="max-width:70px;width: auto;height: fit-content;" src="{%static 'logo/logo_solo3.png'%}" alt="Numera"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{%url 'homepage'%}">
+                    {% trans "Home" %}</a>
+            </li>
+            <li class="nav-item dropdown">
+                <div class="nav-link dropbtn active">
+                    {%trans 'Products'%}
+                </div>
+                    <div class="dropdown-content">
+                        <a class="nav-link" href="{%url 'applications'%}">{% trans "Applications" %}</a>
+                        <a class="nav-link" href="{%url 'progcodes'%}">{% trans "Programme Codes" %}</a>
+                    </div>
+            </li>
+            <li class="nav-item">
+                {% if user.is_authenticated %}
+                <a class="nav-link  active" href="{% url 'profile' %}">
+                    {{user.first_name}}
+                </a>
+                <li class="nav-item">
+                    <a class="nav-link  active" href="{%url 'cart'%}">{% trans "Cart" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  active" href="{%url 'logout'%}">{% trans "Logout" %}</a>
+                </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link  active" href="{%url 'login'%}">{% trans "Login" %}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  active" href="{%url 'signup'%}">{% trans "Sign up" %}</a>
+            </li>
+            {% endif %}
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link  active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    {% if request.LANGUAGE_CODE == 'fa' %}
+                    English
+                    {% else %}
+                    فارسی
+                    {% endif %}
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'change_lang' 'fa' %}">
+                            فارسی</a></li>
+                    <li><a class="dropdown-item" href="{% url 'change_lang' 'en-us' %}">
+                            English</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

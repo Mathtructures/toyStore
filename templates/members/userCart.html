@@ -1,0 +1,63 @@
+{%extends 'layout.html'%}
+{%load i18n%}
+
+{%block mainBodyContent%}
+<div id="cartItems">
+    {%if allProdsInCart.apps or allProdsInCart.codes%}
+    {%for app in allProdsInCart.apps%}
+    <div class="apps">
+        <h3>
+            {%trans 'title'%}: {{app.name}}<br>
+            {%trans 'price'%}: {{app.price}} {%trans 'tomans'%}<br>
+        </h3>
+        <img style="max-height:50px;" src="/media/{{app.cover}}" alt="NO COVER" />
+        <a href="{%url 'cartoperation' 'app' app.id 'remove' 1 %}">
+            <button class="removeFromCart">
+                {% trans 'Remove from cart'%}
+            </button>
+        </a><br>
+
+    </div>
+    {%endfor%}
+
+    {%for code in allProdsInCart.codes%}
+    <div class="progCodes">
+        <h3>
+            {%trans 'title'%}: {{code.name}}<br>
+            {%trans 'price'%}: {{code.price}} {%trans 'tomans'%}<br>
+        </h3>
+        <img style="max-height:50px;" src="/media/{{code.cover}}" alt="NO COVER" />
+
+        <a href="{%url 'cartoperation' 'code' code.id 'remove' 1 %}">
+            <button class="removeFromCart">
+                {% trans 'Remove from cart'%}
+            </button>
+        </a><br>
+    </div>
+    {%endfor%}
+    <h3>
+        {%trans 'Total price'%}: {{totalPrice}} {%trans 'tomans'%}
+    </h3>
+    <script src="https://www.zarinpal.com/webservice/TrustCode" type="text/javascript"></script>
+    <br>
+    <a href="{%url 'makePurchase' gate='IRR'%}">
+        <button style="min-width:120px;margin:50px;">
+            {%trans 'Buy with IRR'%}
+        </button>
+    </a>
+    <br>
+    <a href="{%url 'makePurchase' gate='BTC'%}">
+        <button style="min-width:120px;margin:50px;margin-top:0;">
+            {%trans 'Buy with BTC'%}
+        </button>
+    </a>
+    {%else%}
+    <h2>
+        {%trans 'There are no items in your cart.'%}
+    </h2>
+    {%endif%}
+</div>
+{%endblock%}
+{%block footerContent%}
+{%include 'footer.html' %}
+{%endblock%}

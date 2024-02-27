@@ -1,0 +1,14 @@
+{%extends 'layout.html'%}
+{% load i18n %}
+{% block mainBodyContent %}
+<form action="{% url 'login' %}" method="post"  lang="{{request.LANGUAGE_CODE}}">
+    {% csrf_token %}
+    {%if message%}
+    <h3 style="color:red;">{{ message }}</h3>
+    {%endif%}
+    <input id="username" class="myInput" type="text" name="username" placeholder="{% trans 'Enter your username' %}:" required><br>
+    <input class="myInput" type="password" name="password" placeholder="{% trans 'Enter your password' %}:" required><br>
+    <input class="loginSignupButton" type="submit" value="    {% trans 'Login' %}    "><br>
+</form>
+
+{% endblock %}

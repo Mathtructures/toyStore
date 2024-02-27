@@ -1,0 +1,30 @@
+{% load i18n %}
+{%for code in AllProgCodes %}
+<div class="progCodes">
+    {%if user.is_authenticated%}
+    {% if code.id in purchasedProgCodes %}
+    <a href="{%url 'download' prod='code' id=code.id%}">
+        <button class="downloadButt">
+            {% trans 'Download'%}
+        </button>
+    </a><br>
+    {%else%}
+    <button class="add2cart" onclick="addRemove(event)" data-action="add" data-id="{{ code.id }}" data-type="code">
+        {% trans 'Add to cart'%}
+    </button>
+    <button class="removeFromCart" onclick="addRemove(event)" data-action="remove" data-id="{{ code.id }}"
+        data-type="code">
+        {% trans 'Remove from cart'%}
+    </button><br>
+    {% endif %}
+    {% endif %}
+
+    {%trans 'title'%}: {{code.name}}<br>
+    {%if user.is_authenticated%}
+    {%trans 'price'%}: {{code.price}} {%trans 'tomans'%}<br>
+    {%endif%}
+    <a href="{%url 'progCode_i' code.id%}">
+        <img style="max-width:300px;" src="/media/{{code.cover}}" alt="NO COVER" />
+    </a>
+</div>
+{% endfor %}

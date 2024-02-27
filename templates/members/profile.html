@@ -1,0 +1,31 @@
+{%extends 'layout.html'%}
+{% load i18n %}
+
+{%block mainBodyContent%}
+<h2 lang="{{request.LANGUAGE_CODE}}">
+    {% trans 'Welcome dear' %} {{user.first_name}}</h2>
+{%if purchasedApps or purchasedCodes%}
+<br>
+<h3>{% trans 'Your library'%}</h3><br>
+<div id="userLibrary">
+    {%for app in purchasedApps%}
+    <div class="apps">
+        <h3>{%trans 'title'%}: {{app.name}}</h3>
+        <br><br>
+        <a href="{%url 'app_i' app.id%}">
+            <img src="/media/{{app.cover}}" alt="NO COVER" />
+        </a>
+    </div>
+    {%endfor%}
+    {%for code in purchasedCodes%}
+    <div class="progCodes">
+        <h3>{%trans 'title'%}: {{code.name}}</h3>
+        <br><br>
+        <a href="{%url 'progCode_i' code.id%}">
+            <img src="/media/{{code.cover}}" alt="NO COVER" />
+        </a>
+    </div>
+    {%endfor%}
+</div>
+{%endif%}
+{%endblock%}
