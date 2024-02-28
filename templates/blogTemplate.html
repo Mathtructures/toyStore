@@ -1,0 +1,26 @@
+{% load i18n %}
+{%load static%}
+
+<div>
+title: 
+    {{blog.title}}
+</div>
+<div>
+content: 
+    {{blog.contentText}}
+</div>
+<div>
+author: 
+    {{blog.author}}
+</div>
+<div>
+category: 
+    {{blog.category}}
+</div>
+{%if user.is_authenticated%}
+<form action="{%url 'addComment' userID=user.id blogID=blog.pk%}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="commentText" placeholder="add comment">
+    <input type="submit" placeholder="Submit">
+</form>
+{%endif%}

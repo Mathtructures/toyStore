@@ -49,3 +49,6 @@ class Comment(models.Model):
         Post, verbose_name='post', on_delete=models.CASCADE)
     likes = models.IntegerField(default=0)
     isActive = models.BooleanField(default=False)
+    def __str__(self):
+        return f"on post {self.post} by user {self.member}"
+    

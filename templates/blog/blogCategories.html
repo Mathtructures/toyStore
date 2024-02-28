@@ -7,31 +7,15 @@
             <th>
                 title
             </th>
-            <th>
-                content
-            </th>
-            <th>
-                author
-            </th>
-            <th>
-                category
-            </th>
         </tr>
     </thead>
     <tbody>
-        {% for blogCat in posts %}
+        {% for blogCat in cats %}
         <tr>
             <td>
-                {{blogCat.fields.title}}
-            </td>
-            <td>
-                {{blogCat.fields.contentText}}
-            </td>
-            <td>
-                {{blogCat.fields.author.first_name}}
-            </td>
-            <td>
-                {{blogCat.fields.category.title}}
+                <a href="{%url 'blogDetails' id=blogCat.pk %}">
+                    {{blogCat.fields.title}}
+                </a>
             </td>
         </tr>
         {%endfor%}

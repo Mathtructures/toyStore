@@ -1,0 +1,44 @@
+{%extends 'layout.html'%}
+{% load i18n %}
+{% block mainBodyContent %}
+<table>
+    <thead class="apps">
+        <tr>
+            <th>
+                title
+            </th>
+            <th>
+                content
+            </th>
+            <th>
+                author
+            </th>
+            <th>
+                category
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts %}
+        <tr class="apps">
+            <td>
+                <a href="{% url 'showBlog' id=post.pk%}">
+                    {{post.fields.title}}
+                </a>
+            </td>
+            <td>
+                {{post.fields.contentText}}
+            </td>
+            <td>
+                {{post.fields.author.first_name}}
+            </td>
+            <td>
+                {{post.fields.category.title}}
+            </td>
+        </tr>
+        {%endfor%}
+
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% load i18n %}
+{%load static%}
+
+{%for comment in comments%}
+{%if comment.fields.isActive%}
+<hr>
+<div  class="apps">
+
+    <div>
+        user id: 
+        {{comment.fields.member}}
+</div>
+<div>
+likes: 
+{{comment.fields.likes}}
+</div>
+<div>
+    text: 
+    {{comment.fields.content}}
+</div>
+</div>
+{%endif%}
+{%endfor%}
