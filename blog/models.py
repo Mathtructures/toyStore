@@ -20,7 +20,7 @@ class Post(models.Model):
     title = models.CharField(null=False, max_length=50)
     contentText = models.TextField(blank=True)
     author = models.ForeignKey(
-        Member, verbose_name='author', on_delete=models.CASCADE)
+        Member, verbose_name='author', related_name='author', on_delete=models.CASCADE)
     category = models.ForeignKey(PostCategory, verbose_name="Category",
                                  on_delete=models.CASCADE)
 
@@ -41,7 +41,7 @@ class Album(models.Model):
         return self.title
 
 
-class Comments(models.Model):
+class Comment(models.Model):
     member = models.ForeignKey(
         Member, verbose_name='user', related_name='blog_commentator', on_delete=models.CASCADE)
     content = models.TextField(blank=False)

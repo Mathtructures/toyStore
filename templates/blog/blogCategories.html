@@ -1,0 +1,42 @@
+{%extends 'layout.html'%}
+{% load i18n %}
+{% block mainBodyContent %}
+<table>
+    <thead>
+        <tr>
+            <th>
+                title
+            </th>
+            <th>
+                content
+            </th>
+            <th>
+                author
+            </th>
+            <th>
+                category
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for blogCat in posts %}
+        <tr>
+            <td>
+                {{blogCat.fields.title}}
+            </td>
+            <td>
+                {{blogCat.fields.contentText}}
+            </td>
+            <td>
+                {{blogCat.fields.author.first_name}}
+            </td>
+            <td>
+                {{blogCat.fields.category.title}}
+            </td>
+        </tr>
+        {%endfor%}
+
+    </tbody>
+</table>
+
+{% endblock %}

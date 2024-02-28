@@ -11,10 +11,9 @@
             "program": "${workspaceFolder}\\manage.py",
             "python": "${workspaceRoot}\\..\\venv_toystore\\Scripts\\python.exe",
             "args": [
-                "runserver"
-                // ,"192.168.139.227:8000"
-                ,
-                "192.168.1.3:8000"
+                "runserver",
+                // ,"192.168.139.227:8000",
+                // "192.168.1.3:8000"
             ],
             "debugOptions": [
                 "WaitOnAbnormalExit",
