@@ -1,6 +1,7 @@
 from django.db import models
 from django_resized import ResizedImageField
-# Create your models here.
+
+
 imagesDire = 'images/'
 codesSourceDire = 'codeFiles/'
 appsSourceDire = 'appFiles/'

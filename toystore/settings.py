@@ -45,13 +45,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Other Apps
+    # 'google_translate',
+    # 'geoip2',
+
     # My Apps
     'products',
     'base',
     'api',
     'members',
-    # 'google_translate',
-    # 'geoip2',
+    'cart',
+    'shop',
+    'blog',
+    'financial',
 ]
 
 AUTH_USER_MODEL = "members.Member"
